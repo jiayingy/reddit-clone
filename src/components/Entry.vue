@@ -5,9 +5,12 @@
     </div>
     <div class="vote">
       <i class="material-icons arrow-up"
-          @click="upvote">keyboard_arrow_up</i>
+          @click="upvote"
+      >keyboard_arrow_up</i>
       <p>{{numVotes}}</p>
-      <i class="material-icons arrow-down">keyboard_arrow_down</i>
+      <i class="material-icons arrow-down"
+          @click="downvote"
+      >keyboard_arrow_down</i>
     </div>
     <div class="title">
       {{title}}
@@ -28,6 +31,9 @@ export default {
   methods: {
     upvote() {
       this.numVotes = this.numVotes + 1;
+    },
+    downvote() {
+      this.numVotes = this.numVotes - 1;
     }
   }
 };
