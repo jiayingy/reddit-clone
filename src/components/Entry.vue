@@ -4,7 +4,8 @@
       {{numbering}}.
     </div>
     <div class="vote">
-      <i class="material-icons arrow-up">keyboard_arrow_up</i>
+      <i class="material-icons arrow-up"
+          @click="upvote">keyboard_arrow_up</i>
       <p>{{numVotes}}</p>
       <i class="material-icons arrow-down">keyboard_arrow_down</i>
     </div>
@@ -24,6 +25,11 @@ export default {
       numbering: 1,
     };
   },
+  methods: {
+    upvote() {
+      this.numVotes = this.numVotes + 1;
+    }
+  }
 };
 </script>
 
