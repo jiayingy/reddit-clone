@@ -1,12 +1,15 @@
 <template>
   <div class="entry">
-    <div class="title">
-      {{title}}
+    <div class="numbering">
+      {{numbering}}.
     </div>
     <div class="vote">
       <i class="material-icons arrow-up">keyboard_arrow_up</i>
-      {{numVotes}}
+      <p>{{numVotes}}</p>
       <i class="material-icons arrow-down">keyboard_arrow_down</i>
+    </div>
+    <div class="title">
+      {{title}}
     </div>
   </div>
 </template>
@@ -18,15 +21,46 @@ export default {
     return {
       title: 'test',
       numVotes: 0,
+      numbering: 1,
     };
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 .entry {
   width: 100%;
-  height: 150px;
+  height: 80px;
+  background-color: white;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+
+  .numbering {
+    width: 50px;
+    color: grey;
+  }
+
+  .vote {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    color: grey;
+
+    .material-icons {
+      cursor: pointer;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+  }
 }
 </style>
