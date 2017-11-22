@@ -1,12 +1,12 @@
 <template>
-  <Entry/>
+  <EntryList/>
 </template>
 <script>
-import Entry from './Entry';
+import EntryList from './EntryList';
 
 export default {
   components: {
-    Entry,
+    EntryList,
   },
   data() {
     return {
