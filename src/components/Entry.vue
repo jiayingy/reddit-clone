@@ -34,8 +34,8 @@ export default {
     },
     downvote() {
       this.numVotes = this.numVotes - 1;
-    }
-  }
+    },
+  },
 };
 </script>
 
