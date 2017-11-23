@@ -21,9 +21,10 @@
 <script>
 export default {
   name: 'Entry',
+  props: ['entry', 'index'],
   data() {
     return {
-      title: 'test',
+      title: '',
       numVotes: 0,
       numbering: 1,
     };
@@ -36,6 +37,11 @@ export default {
       this.numVotes = this.numVotes - 1;
     },
   },
+  mounted() {
+    this.title = this.entry.title;
+    this.numVotes = this.entry.numVotes;
+    this.numbering = this.index + 1;  // Index starts from 0
+  },
 };
 </script>
 
@@ -44,11 +50,12 @@ export default {
 .entry {
   width: 100%;
   height: 80px;
-  background-color: white;
+  // background-color: white;
   display: flex;
   align-content: center;
   flex-direction: row;
   align-items: center;
+  border-bottom: 1.5px solid rgba(0,0,0,0.1);
 
   .numbering {
     width: 50px;
