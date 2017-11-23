@@ -1,5 +1,12 @@
 <template>
-  <Entry/>
+  <div class="entrylist">
+      <Entry 
+        v-for="(entry, index) in value"
+        :key="entry.id"
+        :index="index"
+        :entry="entry"
+      />
+  </div>
 </template>
 <script>
 import Entry from './Entry';
