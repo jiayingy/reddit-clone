@@ -11,12 +11,18 @@ import TextBox from './TextBox';
 export default {
   components: {
     EntryList,
-    TextBox
+    TextBox,
   },
   data() {
     return {
-
+      entries: [],
     };
+  },
+  mounted() {
+    this.entries.push({
+      title: 'test',
+      numVotes: 0,
+    });
   },
 };
 </script>
