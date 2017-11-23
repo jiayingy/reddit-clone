@@ -1,6 +1,9 @@
 <template>
   <div class="add-title">
-    <input type="text" placeholder="Add a new title here">
+    <input type="text" placeholder="Add a new title here"
+      id="new-title"
+      @keyup.enter="addNewTitle"
+    >
     <button>Add</button>
   </div>
 </template>
@@ -8,6 +11,16 @@
 export default {
   name: 'TextBox',
   props: ['value'],
+  methods: {
+    addNewTitle() {
+      const newTitle = document.getElementById('new-title').value;
+      if (newTitle.trim().length > 0 && newTitle.trim().length <= 255) {
+        // If title is valid, emit newTitle to parent
+        this.$emit('addNewTitle', newTitle);
+        document.getElementById('new-title').value = '';
+      }
+    },
+  },
 };
 </script>
 <style lang="scss">
