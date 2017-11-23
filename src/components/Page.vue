@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TextBox/>
-    <EntryList/>
+    <TextBox v-model="entries"/>
+    <EntryList v-model="entries"/>
   </div>
 </template>
 <script>
