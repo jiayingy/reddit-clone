@@ -6,7 +6,8 @@
 </template>
 <script>
 export default {
-
+  name: 'TextBox',
+  props: ['value'],
 };
 </script>
 <style lang="scss">
