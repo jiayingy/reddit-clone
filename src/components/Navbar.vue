@@ -9,6 +9,10 @@
           @click="switchTab('new', $event)">
           New
       </li>
+      <li
+          @click="switchTab('all', $event)">
+          All
+      </li>
     </ul>
   </div>
 </template>
