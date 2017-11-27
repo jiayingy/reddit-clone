@@ -38,6 +38,12 @@ export default {
       this.numVotes = this.numVotes - 1;
     },
   },
+  watch: {
+    numVotes() {
+      this.$emit('updateVotes',
+                { id: this.id, numVotes: this.numVotes });
+    },
+  },
   mounted() {
     this.title = this.entry.title;
     this.numVotes = this.entry.numVotes;
