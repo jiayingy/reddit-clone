@@ -38,11 +38,13 @@ export default {
   },
   computed: {
     results() {
+      // Returns all titles from oldest to newest
       return Object.keys(this.value)
                    .map(key => this.value[key]);
     },
     newTitles() {
-      return this.results.slice(-10);
+      // Returns last 10 newly added titles
+      return this.results.slice(-10).reverse();
     },
     popularTitles() {
       return this.results.sort(this.sortByVotes);
