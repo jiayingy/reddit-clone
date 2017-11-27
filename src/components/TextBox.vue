@@ -4,7 +4,9 @@
       id="new-title"
       @keyup.enter="addNewTitle"
     >
-    <button>Add</button>
+    <button
+      @click="addNewTitle"
+    >Add</button>
   </div>
 </template>
 <script>
@@ -49,6 +51,11 @@ export default {
     background-color: #d3edc9;
     border-radius: 0;
     outline: none;
+    cursor: pointer;
+
+    &:active {
+      background-color: #c1e0b5;
+    }
   }
 }
 </style>
