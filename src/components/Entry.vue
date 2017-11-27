@@ -24,6 +24,7 @@ export default {
   props: ['entry', 'index'],
   data() {
     return {
+      id: 0,
       title: '',
       numVotes: 0,
       numbering: 1,
@@ -40,6 +41,7 @@ export default {
   mounted() {
     this.title = this.entry.title;
     this.numVotes = this.entry.numVotes;
+    this.id = this.entry.id;
     this.numbering = this.index + 1;  // Index starts from 0
   },
 };
