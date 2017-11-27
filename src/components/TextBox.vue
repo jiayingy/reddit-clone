@@ -20,7 +20,7 @@ export default {
 
       // If title is valid, emit newTitle to parent to handle
       if (newTitle.length > 0 && newTitle.length <= 255) {
-        this.$emit('addNewTitle', newTitle);
+        this.$emit('addNewTitle', { title: newTitle, numVotes: 0 });
         document.getElementById('new-title').value = '';
       }
     },
