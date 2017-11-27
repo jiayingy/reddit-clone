@@ -46,10 +46,10 @@ export default {
     },
   },
   mounted() {
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 30; i += 1) {
       this.addNewTitle({
-        title: `This is a test${this.id}`,
-        numVotes: 0,
+        title: `This is a title ${this.id}`,
+        numVotes: Math.floor(Math.random() * ((1000 - (-234)) + 1)) - 234,
       });
     }
   },
