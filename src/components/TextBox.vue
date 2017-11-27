@@ -15,9 +15,11 @@ export default {
   props: ['value'],
   methods: {
     addNewTitle() {
+      // Get string from textbox
       const newTitle = document.getElementById('new-title').value.trim();
+
+      // If title is valid, emit newTitle to parent to handle
       if (newTitle.length > 0 && newTitle.length <= 255) {
-        // If title is valid, emit newTitle to parent
         this.$emit('addNewTitle', newTitle);
         document.getElementById('new-title').value = '';
       }
