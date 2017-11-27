@@ -9,10 +9,6 @@
           @click="switchTab('new', $event)">
           New
       </li>
-      <li
-          @click="switchTab('all', $event)">
-          All
-      </li>
     </ul>
   </div>
 </template>
@@ -35,7 +31,7 @@ export default {
         // Update value of currentTab
         this.currentTab = tab;
 
-        // this.$emit('switchTab', tab);
+        this.$emit('switchTab', tab);
       }
     },
   },
