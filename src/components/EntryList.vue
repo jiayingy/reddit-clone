@@ -26,6 +26,9 @@ export default {
       return Object.keys(this.value)
                    .map(key => this.value[key]);
     },
+    newTitles() {
+      return this.results.slice(-10);
+    },
     popularTitles() {
       return this.results.sort(this.sortByVotes);
     },
