@@ -5,7 +5,9 @@
         v-model="entries"
         @addNewTitle="addNewTitle"
       />
-      <Navbar/>
+      <Navbar
+        @switchTab="switchTab"
+      />
     </div>
     <EntryList 
       v-model="entries"
