@@ -27,12 +27,6 @@ export default {
 </script>
 <style lang="scss">
 .add-title {
-  height: 60px;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 1px 5px 1px rgba(0,0,0,0.2);
-  position: relative;
-
   input {
     padding: 15px;
     width: 50%;
