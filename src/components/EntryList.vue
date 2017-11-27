@@ -1,7 +1,22 @@
 <template>
   <div class="entrylist">
       <Entry 
+        v-if="currentTab === 'popular'"
         v-for="(entry, index) in popularTitles"
+        :key="entry.id"
+        :entry="entry"
+        @updateVotes="updateVotes"
+      />
+      <Entry 
+        v-if="currentTab === 'new'"
+        v-for="(entry, index) in newTitles"
+        :key="entry.id"
+        :entry="entry"
+        @updateVotes="updateVotes"
+      />
+      <Entry 
+        v-if="currentTab === 'all'"
+        v-for="(entry, index) in results"
         :key="entry.id"
         :entry="entry"
         @updateVotes="updateVotes"
