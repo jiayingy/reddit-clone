@@ -7,7 +7,9 @@
       />
       <Navbar/>
     </div>
-    <EntryList v-model="entries"/>
+    <EntryList 
+      v-model="entries"
+      :currentTab="tab"/>
   </div>
 </template>
 <script>
@@ -24,6 +26,7 @@ export default {
   data() {
     return {
       entries: [],
+      tab: 'popular',
     };
   },
   methods: {
@@ -32,6 +35,9 @@ export default {
         title,
         numVotes: 0,
       });
+    },
+    switchTab(tab) {
+      this.tab = tab;
     },
   },
   mounted() {
