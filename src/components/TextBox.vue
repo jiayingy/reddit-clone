@@ -15,8 +15,8 @@ export default {
   props: ['value'],
   methods: {
     addNewTitle() {
-      const newTitle = document.getElementById('new-title').value;
-      if (newTitle.trim().length > 0 && newTitle.trim().length <= 255) {
+      const newTitle = document.getElementById('new-title').value.trim();
+      if (newTitle.length > 0 && newTitle.length <= 255) {
         // If title is valid, emit newTitle to parent
         this.$emit('addNewTitle', newTitle);
         document.getElementById('new-title').value = '';
