@@ -3,8 +3,8 @@
       <Entry 
         v-for="(entry, index) in value"
         :key="entry.id"
-        :index="index"
         :entry="entry"
+        @updateVotes="updateVotes"
       />
   </div>
 </template>
@@ -16,7 +16,19 @@ export default {
   components: {
     Entry,
   },
-  props: ['value'],
+  props: ['value', 'currentTab'],
+  data() {
+    return {
+    };
+  },
+  methods: {
+    updateVotes(entry) {
+      // This function updates the numVotes of updated entry and emits to Page
+      const newMap = this.value;
+      newMap[entry.id].numVotes = entry.numVotes;
+      this.$emit('input', newMap);
+    },
+  },
 };
 </script>
 <style lang="scss">
