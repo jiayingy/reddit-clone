@@ -44,14 +44,12 @@ export default {
     },
   },
   mounted() {
-    this.entries.push({
-      title: 'This is a test',
-      numVotes: 0,
-    });
-    this.entries.push({
-      title: 'This is a test 2',
-      numVotes: 0,
-    });
+    for (let i = 0; i < 5; i += 1) {
+      this.addNewTitle({
+        title: `This is a test${this.id}`,
+        numVotes: 0,
+      });
+    }
   },
 };
 </script>
