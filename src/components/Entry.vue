@@ -1,7 +1,7 @@
 <template>
   <div class="entry">
     <div class="numbering">
-      {{numbering}}.
+      .
     </div>
     <div class="vote">
       <i class="material-icons arrow-up"
@@ -21,13 +21,12 @@
 <script>
 export default {
   name: 'Entry',
-  props: ['entry', 'index'],
+  props: ['entry'],
   data() {
     return {
       id: 0,
       title: '',
       numVotes: 0,
-      numbering: 1,
     };
   },
   methods: {
@@ -48,7 +47,6 @@ export default {
     this.title = this.entry.title;
     this.numVotes = this.entry.numVotes;
     this.id = this.entry.id;
-    this.numbering = this.index + 1;  // Index starts from 0
   },
 };
 </script>
@@ -68,6 +66,11 @@ export default {
   .numbering {
     width: 50px;
     color: grey;
+
+    &::before {
+      counter-increment: index;
+      content: counter(index);
+    }
   }
 
   .vote {
