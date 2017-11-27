@@ -25,14 +25,14 @@ export default {
   },
   data() {
     return {
-      entries: [],
+      entries: {},
       tab: 'popular',
       id: 0,
     };
   },
   methods: {
     addNewTitle(obj) {
-      this.entries.push({
+      this.$set(this.entries, this.id, {
         id: this.id,
         title: obj.title,
         numVotes: obj.numVotes,
