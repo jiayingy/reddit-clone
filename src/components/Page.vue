@@ -27,14 +27,17 @@ export default {
     return {
       entries: [],
       tab: 'popular',
+      id: 0,
     };
   },
   methods: {
-    addNewTitle(title) {
+    addNewTitle(obj) {
       this.entries.push({
-        title,
-        numVotes: 0,
+        id: this.id,
+        title: obj.title,
+        numVotes: obj.numVotes,
       });
+      this.id += 1;
     },
     switchTab(tab) {
       this.tab = tab;
