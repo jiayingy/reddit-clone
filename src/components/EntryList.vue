@@ -1,7 +1,7 @@
 <template>
   <div class="entrylist">
       <Entry 
-        v-for="(entry, index) in value"
+        v-for="(entry, index) in popularTitles"
         :key="entry.id"
         :entry="entry"
         @updateVotes="updateVotes"
@@ -21,12 +21,24 @@ export default {
     return {
     };
   },
+  computed: {
+    results() {
+      return Object.keys(this.value)
+                   .map(key => this.value[key]);
+    },
+    popularTitles() {
+      return this.results.sort(this.sortByVotes);
+    },
+  },
   methods: {
     updateVotes(entry) {
       // This function updates the numVotes of updated entry and emits to Page
       const newMap = this.value;
       newMap[entry.id].numVotes = entry.numVotes;
       this.$emit('input', newMap);
+    },
+    sortByVotes(obj1, obj2) {
+      return obj1.numVotes > obj2.numVotes ? -1 : 1;
     },
   },
 };
