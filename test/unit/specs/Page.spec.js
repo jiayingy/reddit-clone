@@ -7,5 +7,8 @@ const page = new PageConstructor().$mount();
 
 describe('Page.vue', () => {
   context('when adding a valid title', () => {
+    it('should increase length of entries by 1', () => {
+      const initialNumEntries = page.entries.length;
+    });
   });
 });
