@@ -22,9 +22,9 @@ export default {
   props: ['entry'],
   data() {
     return {
-      id: 0,
-      title: '',
-      numVotes: 0,
+      id: this.entry.id,
+      title: this.entry.title,
+      numVotes: this.entry.numVotes,
     };
   },
   methods: {
@@ -40,11 +40,6 @@ export default {
       this.$emit('updateVotes',
                 { id: this.id, numVotes: this.numVotes });
     },
-  },
-  mounted() {
-    this.title = this.entry.title;
-    this.numVotes = this.entry.numVotes;
-    this.id = this.entry.id;
   },
 };
 </script>
