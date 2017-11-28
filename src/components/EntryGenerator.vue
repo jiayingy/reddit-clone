@@ -3,7 +3,7 @@
     <input type="text" placeholder="Add a new title here"
       id="new-title"
       maxlength="255"
-      v-model="newTitle"
+      v-model.trim="newTitle"
       @keyup.enter="addNewTitle"
     >
     <button
@@ -17,9 +17,11 @@ export default {
   props: ['value'],
   methods: {
     addNewTitle() {
-      this.$emit('addNewTitle', { title: this.newTitle, numVotes: this.numVotes });
-      this.newTitle = '';
-      this.numVotes = 0;
+      if (this.newTitle) {
+        this.$emit('addNewTitle', { title: this.newTitle, numVotes: this.numVotes });
+        this.newTitle = '';
+        this.numVotes = 0;
+      }
     },
   },
   data() {
