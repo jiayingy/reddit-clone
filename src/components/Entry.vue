@@ -1,8 +1,6 @@
 <template>
   <div class="entry">
-    <div class="numbering">
-      .
-    </div>
+    <div class="numbering"></div>
     <div class="vote">
       <i class="material-icons arrow-up"
           @click="upvote"
@@ -56,7 +54,7 @@ export default {
 .entry {
   width: 100%;
   height: 80px;
-  // background-color: white;
+  background-color: #eee;
   display: flex;
   align-content: center;
   flex-direction: row;
@@ -69,7 +67,7 @@ export default {
 
     &::before {
       counter-increment: index;
-      content: counter(index);
+      content: counter(index) ".";
     }
   }
 
