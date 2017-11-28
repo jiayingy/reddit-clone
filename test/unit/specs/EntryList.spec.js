@@ -37,5 +37,14 @@ describe('EntryList.vue', () => {
         expect(arr[i].numVotes).to.equal(maxEntries - i - 1);
       }
     });
+
+    it('should return an array of entries from newest to oldest', () => {
+      const arr = entrylist.newTitles;
+
+      for (let i = 0; i < maxEntries; i += 1) {
+        expect(arr[i].title).to.equal(`this is a title ${maxEntries - i - 1}`);
+        expect(arr[i].numVotes).to.equal(maxEntries - i - 1);
+      }
+    });
   });
 });
