@@ -1,11 +1,13 @@
 <template>
   <div class="entrylist">
+    <transition-group name="flip-list" tag="div">
       <Entry 
         v-for="(entry, index) in results"
         :key="entry.id"
         :entry="entry"
         @updateVotes="updateVotes"
       />
+    </transition-group>
   </div>
 </template>
 <script>
@@ -57,7 +59,16 @@ export default {
 };
 </script>
 <style lang="scss">
-
+.flip-list-move {
+  transition: transform 0.5s, opacity 0.1s;
+}
+.flip-list-enter,
+.flip-list-leave-to {
+  opacity: 0;
+}
+.flip-list-leave-active {
+  position: absolute;
+}
 </style>
 
 
