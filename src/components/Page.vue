@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="top-container">
-      <TextBox 
+      <EntryGenerator 
         v-model="entries"
         @addNewTitle="addNewTitle"
       />
@@ -16,13 +16,13 @@
 </template>
 <script>
 import EntryList from './EntryList';
-import TextBox from './TextBox';
+import EntryGenerator from './EntryGenerator';
 import Navbar from './Navbar';
 
 export default {
   components: {
     EntryList,
-    TextBox,
+    EntryGenerator,
     Navbar,
   },
   data() {
