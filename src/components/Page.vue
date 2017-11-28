@@ -1,3 +1,7 @@
+/** 
+ * This component maintains data flow of current tab,
+ * and list of all entries (titles and its number of votes)
+ */
 <template>
   <div>
     <div class="top-container">

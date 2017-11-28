@@ -1,3 +1,6 @@
+/** 
+ * This component maintains the title and number of votes
+ */
 <template>
   <div class="entry">
     <div class="numbering"></div>

@@ -1,3 +1,6 @@
+/** 
+ * This component displays all relevant entries according to the current tab
+ */
 <template>
   <div class="entrylist">
     <transition-group name="flip-list" tag="div">

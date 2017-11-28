@@ -1,3 +1,9 @@
+/**
+ * This component takes valid input from the text box as a new title,
+ * creates a object containing the newTitle and numVotes
+ * and emits an addNewTitle event to the parent component
+ */
+
 <template>
   <div class="add-title">
     <input type="text" placeholder="Add a new title here"
