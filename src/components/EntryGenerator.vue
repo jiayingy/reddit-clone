@@ -30,14 +30,6 @@ export default {
       numVotes: 0,
     };
   },
-  mounted() {
-    // Populate 30 new titles on mount with random num votes
-    for (let i = 0; i < 30; i += 1) {
-      this.newTitle = `This is a title${i}`;
-      this.numVotes = Math.floor(Math.random() * ((1000 - (-234)) + 1)) - 234;
-      this.addNewTitle();
-    }
-  },
 };
 </script>
 <style lang="scss">
