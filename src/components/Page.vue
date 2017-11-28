@@ -18,6 +18,7 @@
 import EntryList from './EntryList';
 import EntryGenerator from './EntryGenerator';
 import Navbar from './Navbar';
+import fakeData from '../assets/data.json';
 
 export default {
   components: {
@@ -44,6 +45,11 @@ export default {
     switchTab(tab) {
       this.tab = tab;
     },
+  },
+  mounted() {
+    fakeData.forEach((data) => {
+      this.addNewTitle(data);
+    });
   },
 };
 </script>
