@@ -23,4 +23,10 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+
+@media only screen and (max-width: 484px) {
+  body {
+    width: 484px;
+  }
+}
 </style>
