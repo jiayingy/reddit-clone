@@ -21,6 +21,7 @@ describe('EntryList.vue', () => {
 
   context('when given a hashmap of entries with different number of votes', () => {
     it('should return an array of entries containing the same title and votes', () => {
+      entrylist.currentTab = 'all';
       const arr = entrylist.results;
 
       for (let i = 0; i < maxEntries; i += 1) {
@@ -30,7 +31,8 @@ describe('EntryList.vue', () => {
     });
 
     it('should return an array of entries sorted by number of votes in descending order', () => {
-      const arr = entrylist.popularTitles;
+      entrylist.currentTab = 'popular';
+      const arr = entrylist.results;
 
       for (let i = 0; i < maxEntries; i += 1) {
         expect(arr[i].title).to.equal(`this is a title ${maxEntries - i - 1}`);
@@ -39,7 +41,8 @@ describe('EntryList.vue', () => {
     });
 
     it('should return an array of entries from newest to oldest', () => {
-      const arr = entrylist.newTitles;
+      entrylist.currentTab = 'new';
+      const arr = entrylist.results;
 
       for (let i = 0; i < maxEntries; i += 1) {
         expect(arr[i].title).to.equal(`this is a title ${maxEntries - i - 1}`);
