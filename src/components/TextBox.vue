@@ -2,6 +2,8 @@
   <div class="add-title">
     <input type="text" placeholder="Add a new title here"
       id="new-title"
+      maxlength="255"
+      v-model="newTitle"
       @keyup.enter="addNewTitle"
     >
     <button
@@ -15,15 +17,14 @@ export default {
   props: ['value'],
   methods: {
     addNewTitle() {
-      // Get string from textbox
-      const newTitle = document.getElementById('new-title').value.trim();
-
-      // If title is valid, emit newTitle to parent to handle
-      if (newTitle.length > 0 && newTitle.length <= 255) {
-        this.$emit('addNewTitle', { title: newTitle, numVotes: 0 });
-        document.getElementById('new-title').value = '';
-      }
+      this.$emit('addNewTitle', { title: this.newTitle, numVotes: 0 });
+      this.newTitle = '';
     },
+  },
+  data() {
+    return {
+      newTitle: '',
+    };
   },
 };
 </script>
